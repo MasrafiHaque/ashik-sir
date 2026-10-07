@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="A tribute to Sheikh Ashik Rahman — a beloved mathematics teacher who makes numbers come alive. Where mathematics becomes magic." />
+  <meta name="theme-color" content="#070b18" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:title" content="Sheikh Ashik Rahman — Where mathematics becomes magic." />
+  <meta property="og:description" content="A surprise tribute website made with love and gratitude by a student." />
+  <meta property="og:type" content="website" />
+  <title>Sheikh Ashik Rahman — Where Mathematics Becomes Magic</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Critical CSS: paints the theme instantly to avoid a flash -->
+  <style>
+    :root { color-scheme: dark; }
+    html { background: #070b18; }
+    body { margin: 0; background: #070b18; color: #eef2ff; overflow-x: hidden; }
+    .scroll-progress { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 60; }
+    .scroll-progress__bar { height: 100%; width: 0; background: linear-gradient(90deg,#f5d37a,#d9a441); }
+  </style>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Thin gold scroll-progress bar -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollBar"></div>
+  </div>
+
+  <!-- Floating math symbols background layer (populated by JS) -->
+  <div class="bg-symbols" id="bgSymbols" aria-hidden="true"></div>
+
+  <main id="main">
+
+    <!-- 1. HERO -->
+    <section class="hero" id="hero" aria-label="Introduction">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow reveal">Mathematics · Mentorship · Magic</p>
+          <h1 class="hero__name reveal" id="heroName">Sheikh Ashik Rahman</h1>
+          <p class="hero__bn reveal" id="heroSubtitleBn">আমাদের প্রিয় গণিত স্যার</p>
+          <p class="hero__tagline reveal" id="heroTagline">
+            <span class="type-target" id="typeTarget"></span><span class="type-caret" id="typeCaret" aria-hidden="true">|</span>
+          </p>
+          <div class="hero__actions reveal">
+            <a class="btn btn--gold" href="#about">Meet Sir <span aria-hidden="true">↓</span></a>
+            <a class="btn btn--ghost" href="#thankyou">Thank You, Sir</a>
+          </div>
+        </div>
+
+        <div class="hero__photo reveal">
+          <div class="photo-frame">
+            <div class="photo-frame__ring" aria-hidden="true"></div>
+            <div class="photo-frame__ring photo-frame__ring--2" aria-hidden="true"></div>
+            <div class="photo-frame__media" id="heroPhotoWrap">
+              <img id="heroPhoto" src="images/sir-hero.jpg" alt="Portrait of Sheikh Ashik Rahman, mathematics teacher"
+                   width="1200" height="1200" decoding="async" />
+            </div>
+          </div>
+          <div class="hero__badge" aria-hidden="true">π</div>
+        </div>
+      </div>
+
+      <a class="scroll-down" href="#about" aria-label="Scroll down to About section">
+        <span class="scroll-down__text">Scroll Down</span>
+        <span class="scroll-down__mouse" aria-hidden="true"><span></span></span>
+      </a>
+    </section>
+
+    <!-- 2. ABOUT SIR -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title reveal" id="about-title">About Sir</h2>
+          <p class="section__subtitle reveal">The teacher behind the magic.</p>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p class="about__lead">
+              A great mathematics teacher does more than explain formulas. Sir teaches us how to
+              <em>think</em> — to break a big, scary problem into small, friendly steps. He builds
+              patience, so we do not give up when the answer is not obvious.
+            </p>
+            <p>
+              Most of all, he builds confidence. He makes every student feel that with clear
+              thinking and honest effort, even the hardest equation can be solved. The numbers
+              stay the same; the way we face them changes — and that is his real lesson.
+            </p>
+            <p class="about__home">
+              <span class="about__pin" aria-hidden="true">📍</span>
+              Proudly from <strong>Kurigram, Bangladesh</strong>.
+            </p>
+            <ul class="about__chips" aria-label="Highlights">
+              <li class="chip reveal">Clear thinking</li>
+              <li class="chip reveal">Patience</li>
+              <li class="chip reveal">Confidence</li>
+              <li class="chip reveal">Consistent effort</li>
+            </ul>
+          </div>
+
+          <figure class="about__card reveal" id="aboutCard">
+            <div class="about__media">
+              <img id="aboutPhoto" src="images/sir-about.jpg" alt="Sheikh Ashik Rahman teaching and smiling"
+                   width="1200" height="900" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="about__caption">
+              <span class="about__caption-mark" aria-hidden="true">∞</span>
+              Guiding students from confusion to clarity.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ROLES & VENTURES -->
+    <section class="section section--alt" id="roles" aria-labelledby="roles-title">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title reveal" id="roles-title">Roles &amp; Ventures</h2>
+          <p class="section__subtitle reveal">One mind, many missions.</p>
+        </header>
+        <div class="cards cards--3" id="rolesGrid"><!-- populated by script.js --></div>
+      </div>
+    </section>
+
+    <!-- 4. SIR'S JOURNEY -->
+    <section class="section" id="journey" aria-labelledby="journey-title">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title reveal" id="journey-title">Sir&rsquo;s Journey</h2>
+          <p class="section__subtitle reveal">From Kurigram to the classroom — a path of steady steps.</p>
+        </header>
+        <ol class="timeline" id="timeline"><!-- populated by script.js --></ol>
+      </div>
+    </section>
+
+    <!-- 5. WHAT SIR TAUGHT US -->
+    <section class="section section--alt" id="lessons" aria-labelledby="lessons-title">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title reveal" id="lessons-title">What Sir Taught Us</h2>
+          <p class="section__subtitle reveal">Lessons that go far beyond the textbook.</p>
+        </header>
+        <div class="cards cards--3" id="lessonsGrid"><!-- populated by script.js --></div>
+      </div>
+    </section>
+
+    <!-- 6. AN EQUATION FOR SIR -->
+    <section class="section" id="equation" aria-labelledby="equation-title">
+      <div class="container container--narrow">
+        <header class="section__head">
+          <h2 class="section__title reveal" id="equation-title">An Equation for Sir</h2>
+          <p class="section__subtitle reveal">Some things add up to more than numbers.</p>
+        </header>
+
+        <div class="equation reveal" id="equationBox">
+          <div class="equation__line">
+            <span class="term">Sir</span>
+            <span class="op" aria-hidden="true">+</span>
+            <span class="term">Student</span>
+            <span class="op" aria-hidden="true">+</span>
+            <span class="term">Hard&nbsp;Work</span>
+            <span class="op" aria-hidden="true">=</span>
+            <span class="term term--result" id="equationResult">?</span>
+          </div>
+          <button class="btn btn--gold equation__btn" id="solveBtn" type="button" aria-describedby="equationHint">
+            Solve it
+          </button>
+          <p class="equation__hint" id="equationHint" aria-live="polite">Press the button and let us solve it, step by step…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. BIRTHDAY -->
+    <section class="section section--alt" id="birthday" aria-labelledby="birthday-title">
+      <div class="container container--narrow">
+        <header class="section__head">
+          <h2 class="section__title reveal" id="birthday-title">Birthday</h2>
+          <p class="section__subtitle reveal">A special day we never forget.</p>
+        </header>
+
+        <div class="birthday reveal" id="birthdayBox">
+          <div class="birthday__date">
+            <span class="birthday__day">19</span>
+            <span class="birthday__month">June</span>
+          </div>
+          <p class="birthday__label" id="birthdayLabel">Counting down to Sir&rsquo;s next birthday</p>
+          <div class="countdown" id="countdown" aria-live="polite">
+            <div class="countdown__unit"><span class="countdown__num" id="cdDays">00</span><span class="countdown__cap">Days</span></div>
+            <div class="countdown__unit"><span class="countdown__num" id="cdHours">00</span><span class="countdown__cap">Hours</span></div>
+            <div class="countdown__unit"><span class="countdown__num" id="cdMins">00</span><span class="countdown__cap">Minutes</span></div>
+            <div class="countdown__unit"><span class="countdown__num" id="cdSecs">00</span><span class="countdown__cap">Seconds</span></div>
+          </div>
+          <p class="birthday__wish" id="birthdayWish" hidden>Happy Birthday, Sir! <span class="bn">শুভ জন্মদিন, স্যার!</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. WORDS FROM STUDENTS -->
+    <section class="section" id="messages" aria-labelledby="messages-title">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title reveal" id="messages-title">Words from Students</h2>
+          <p class="section__subtitle reveal">Small notes with big gratitude.</p>
+        </header>
+
+        <div class="wall" id="messageWall"><!-- populated by script.js --></div>
+
+        <form class="message-form reveal" id="messageForm" novalidate>
+          <h3 class="message-form__title">Leave a message for Sir</h3>
+          <div class="field">
+            <label for="msgName">Your name</label>
+            <input id="msgName" name="name" type="text" maxlength="40" autocomplete="name" placeholder="e.g. A grateful student" required />
+          </div>
+          <div class="field">
+            <label for="msgText">Your message</label>
+            <textarea id="msgText" name="message" rows="3" maxlength="280" placeholder="Write something kind…" required></textarea>
+          </div>
+          <button class="btn btn--gold" type="submit">Add message</button>
+          <p class="message-form__note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 9. THANK YOU, SIR -->
+    <section class="section thankyou" id="thankyou" aria-labelledby="thankyou-title">
+      <div class="container container--narrow">
+        <h2 class="thankyou__title section__title reveal" id="thankyou-title">Thank You, Sir</h2>
+        <p class="thankyou__bn reveal">ধন্যবাদ স্যার</p>
+        <p class="thankyou__text reveal">
+          For every solved problem, every patient explanation, and every time you believed in us
+          before we believed in ourselves — thank you, Sir.
+        </p>
+        <p class="thankyou__credit reveal">
+          This website is made with love and gratitude for our Sir.
+          <span class="bn">— এই ওয়েবসাইটটি স্যারের প্রতি ভালোবাসা ও কৃতজ্ঞতা থেকে তৈরি।</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. FOOTER -->
+  <footer class="footer" aria-label="Site credit">
+    <div class="container">
+      <div class="footer__divider" aria-hidden="true"></div>
+      <p class="footer__credit">
+        Designed &amp; Developed by
+        <a id="creatorLink" href="https://www.facebook.com/MasrafiHaquee" target="_blank" rel="noopener noreferrer">Masrafi Haque</a>
+      </p>
+      <p class="footer__bn bn">মাশরাফি হক-এর পক্ষ থেকে স্যারের জন্য শ্রদ্ধা ও ভালোবাসা</p>
+      <p class="footer__copy">© 2026 · All rights reserved</p>
+    </div>
+  </footer>
+
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# Node / tooling (testing only)
+node_modules/
+package-lock.json
+package.json
+npm-debug.log*
+
+# Test & reporting artifacts (Playwright / Puppeteer / Lighthouse)
+screenshots/
+test-results/
+playwright-report/
+test-results/
+.lighthouseci/
