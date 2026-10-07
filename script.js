@@ -39,6 +39,12 @@ const CONFIG = {
       featured: true
     },
     {
+      icon: "∑",
+      title: "Scholastica Coaching Center",
+      role: "Lead Mathematics Teacher",
+      text: "Guiding students through the beauty of mathematics with clarity, structure and warmth."
+    },
+    {
       icon: "π",
       title: "Ashik Mathmagics",
       role: "CEO & Founder",
@@ -49,12 +55,6 @@ const CONFIG = {
       title: "Luminary (Science Private Program)",
       role: "Co-Founder & Lead Mathematics Mentor",
       text: "Mentoring curious minds and shaping strong foundations in science and mathematics."
-    },
-    {
-      icon: "∑",
-      title: "Scholastica Coaching Center",
-      role: "Lead Mathematics Teacher",
-      text: "Guiding students through the beauty of mathematics with clarity, structure and warmth."
     }
   ],
 
