@@ -19,6 +19,9 @@ const CONFIG = {
   tagline: "Where mathematics becomes magic.",   // typed out in the hero
   monogram: "AR",                                // fallback if a photo is missing
 
+  /* --- Primary designation (shown first in the hero + roles) --- */
+  designation: "Lecturer, Kurigram City College",
+
   /* --- Photos (relative to index.html) --- */
   photoHero: "images/sir-hero.jpg",
   photoAbout: "images/sir-about.jpg",
@@ -28,6 +31,13 @@ const CONFIG = {
 
   /* --- Roles & Ventures (section 3) --- */
   roles: [
+    {
+      icon: "≈",
+      title: "Kurigram City College",
+      role: "Lecturer",
+      text: "Serving as a Lecturer at Kurigram City College, in the heart of Kurigram, Bangladesh.",
+      featured: true
+    },
     {
       icon: "∑",
       title: "Scholastica Coaching Center",
@@ -71,7 +81,7 @@ const CONFIG = {
     {
       year: "Now",
       title: "Teaching & building his own ventures",
-      place: "Sharing mathematics with students and growing his own initiatives."
+      place: "Lecturer at Kurigram City College — sharing mathematics with students and growing his own initiatives."
     }
   ],
 
@@ -189,11 +199,13 @@ function escapeHtml(value) {
 function fillConfigContent() {
   // Identity + hero
   const heroName = $("#heroName");
+  const heroDesig = $("#heroDesig");
   const heroSub  = $("#heroSubtitleBn");
   const heroImg  = $("#heroPhoto");
   const aboutImg = $("#aboutPhoto");
 
   if (heroName) heroName.textContent = CONFIG.name;
+  if (heroDesig) heroDesig.textContent = CONFIG.designation;
   if (heroSub)  heroSub.textContent  = CONFIG.heroSubtitleBn;
   if (heroImg)  heroImg.src = CONFIG.photoHero;
   if (aboutImg) aboutImg.src = CONFIG.photoAbout;
@@ -202,7 +214,7 @@ function fillConfigContent() {
   const rolesGrid = $("#rolesGrid");
   if (rolesGrid) {
     rolesGrid.innerHTML = CONFIG.roles.map((r) => `
-      <article class="card reveal" tabindex="0">
+      <article class="card reveal${r.featured ? " card--feature" : ""}" tabindex="0">
         <div class="card__icon" aria-hidden="true">${escapeHtml(r.icon)}</div>
         <h3 class="card__title">${escapeHtml(r.title)}</h3>
         <span class="card__role">${escapeHtml(r.role)}</span>
